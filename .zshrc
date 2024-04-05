@@ -162,7 +162,14 @@ alias kcl="kubectl logs"
 alias kce="kubectl exec"
 alias k="kubectl"
 alias kcp="kubectl cp" 
-
-
+alias nano="sudo nano"
+alias la="ls -a"
+alias hgrep='history | grep'
+alias q="exit"
+alias rm="rm -rf"
+alias ports='sudo netstat -tulanp'
+alias meminfo="free -m -l -t"
+alias pscpu="ps auxf | sort -nr -k 3"
+alias wget="wget -c"
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
