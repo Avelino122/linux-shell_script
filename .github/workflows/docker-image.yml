@@ -8,8 +8,6 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-    environment: dockerfile
-
     steps:
     - uses: actions/checkout@v3
 
@@ -24,10 +22,11 @@ jobs:
 
     - name: Build and tag Docker image
       run: |
-        docker build . --file Dockerfile --tag thirerys:$TIMESTAMP --tag thirerys:latest
+        docker build . --file Dockerfile --tag avelino12/thierrys:$TIMESTAMP --tag avelino12/thierrys:latest
 
     - name: Push Docker image to Docker Hub
       run: |
-        docker push thirerys:$TIMESTAMP
-        docker push thirerys:latest
+        docker push avelino12/thierrys:$TIMESTAMP
+        docker push avelino12/thierrys:latest
+
 #testeguy
