@@ -1,5 +1,5 @@
 name: Docker Image CI
-##test:Thierrys Avelino
+##test:Thierrys Avelino agr vai rs
 on:
   push:
     branches: [ "main" ]
@@ -27,7 +27,7 @@ jobs:
       with:
         username: ${{ secrets.USERNAME }}  
         password: ${{ secrets.PASS }}     
-        
+
     - name: Build and tag Docker image
       run: docker build . --file Dockerfile --tag thirerys:$(date +%s) --tag thirerys:latest
 
