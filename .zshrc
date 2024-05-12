@@ -4,7 +4,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
-
+export NVM_DIR='$HOME/.nvm'
+export GOROOT=~/Downloads/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -153,7 +156,7 @@ SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_SUFFIX="🚀 "
 alias vs="code"
-alias update="sudo apt update && sudo apt upgrade"
+alias update="sudo apt update "
 alias install="sudo apt install"
 alias cat="batcat --theme gruvbox-dark"
 alias kcg="kubectl get"
@@ -161,7 +164,10 @@ alias kcd="kubectl describe"
 alias kcl="kubectl logs"
 alias kce="kubectl exec"
 alias k="kubectl"
-alias kcp="kubectl cp" 
+alias kcp="kubectl cp"
+alias kca="kubectl apply -f"
+alias kport="kubectl port-forward" 
+alias kscale="kubectl scale"
 alias nano="sudo nano"
 alias la="ls -a"
 alias hgrep='history | grep'
@@ -171,5 +177,18 @@ alias ports='sudo netstat -tulanp'
 alias meminfo="free -m -l -t"
 alias pscpu="ps auxf | sort -nr -k 3"
 alias wget="wget -c"
+alias drmi="docker rmi"
+alias d="docker"
+alias dps="docker ps"
+alias dps-a="docker ps -a"
+alias dexec="docker exec"
+alias dl="docker logs"
+alias dbuild="docker build -f"
+alias dimage="docker images"
+alias dfimage="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm ghcr.io/laniksj/dfimage"
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
