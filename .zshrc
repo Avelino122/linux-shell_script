@@ -5,7 +5,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
 export NVM_DIR='$HOME/.nvm'
-export GOROOT=~/Downloads/go
+export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 # Set name of the theme to load --- if set to "random", it will
@@ -75,6 +75,7 @@ ZSH_THEME="spaceship"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
+plugins=(git vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -153,12 +154,15 @@ SPACESHIP_PROMPT_ADD_NEWLINE=false
 # SPACESHIP_PROMPT_SEPARATE_LINE=false # Make the prompt span across two lines
 # SPACESHIP_DIR_TRUNC=1 # Shows only the last directory folder name
 
-SPACESHIP_CHAR_SYMBOL="❯"
-SPACESHIP_CHAR_SUFFIX="🚀 "
+SPACESHIP_CHAR_SYMBOL=">"
+SPACESHIP_CHAR_SUFFIX="💫 "
+SPACESHIP_USER_COLOR="226" 
+
+
 alias vs="code"
 alias update="sudo apt update "
 alias install="sudo apt install"
-alias cat="batcat --theme gruvbox-dark"
+alias cat="batcat --theme gruvbox-dark" 
 alias kcg="kubectl get"
 alias kcd="kubectl describe"
 alias kcl="kubectl logs"
@@ -183,12 +187,16 @@ alias dps="docker ps"
 alias dps-a="docker ps -a"
 alias dexec="docker exec"
 alias dl="docker logs"
+alias pinta="flatpak run com.github.PintaProject.Pinta"
 alias dbuild="docker build -f"
 alias dimage="docker images"
 alias dfimage="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm ghcr.io/laniksj/dfimage"
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
+alias yad="yad --width=160 --height=100"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export YAD_OPTS="--width=80 --height=40"
